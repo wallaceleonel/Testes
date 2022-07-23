@@ -3,6 +3,8 @@ using Microsoft.AspNetCore.Mvc;
 using ToDoListApi.Models;
 using ToDoListApi.Models.Entites;
 using ToDoListApi.Repositories;
+using System.Linq;
+using System.Net;
 
 namespace ToDoListApi.Controllers
 {
@@ -16,33 +18,48 @@ namespace ToDoListApi.Controllers
             repos = _repos;
         }
         [HttpGet("{Id}")]
-        public IActionResult Get( [FromRoute]TarefaId tarefa)
+        public IActionResult Get([FromRoute] TarefaId tarefa)
         {
             var tarefas_db = repos.Read(tarefa.Id);
             return Ok(tarefas_db);
         }
-        [HttpPost]
-        public IActionResult Post([FromBody] PostTarefa tarefas)
+        [ProducesResponseType(typeof(List<Tarefas>), (int)HttpStatusCode.OK)]
+        [ProducesResponseType((int)HttpStatusCode.NotFound)]
+        [HttpGet]
+        public IActionResult Get(Tarefas tarefa)
         {
-            if (repos.Create(tarefas))
-                return Ok();
+            var tarefas = repos.ReadAll();
 
-            return BadRequest();
-        }
-       [HttpPut]
-       public IActionResult Put(PutTarefas tarefas)
-        {
-            if(repos.Update(tarefas))
-                return(Ok());
-            return BadRequest();
-        }
-        [HttpDelete("{Id}")]
-        public IActionResult Delete([FromRoute] TarefaId tarefas)
-        {
-            if (repos.Delete(tarefas.Id))
-                return Ok();
+            if (tarefas == null)
+            {
+                return NotFound();
+            }
 
-            return BadRequest();
+            return (IActionResult)tarefas;
+        }
+            [HttpPost]
+            public IActionResult Post([FromBody] PostTarefa tarefas)
+            {
+                if (repos.Create(tarefas))
+                    return Ok();
+
+                return BadRequest();
+            }
+            [HttpPut]
+            public IActionResult Put(PutTarefas tarefas)
+            {
+                if (repos.Update(tarefas))
+                    return (Ok());
+                return BadRequest();
+            }
+            [HttpDelete("{Id}")]
+            public IActionResult Delete([FromRoute] TarefaId tarefas)
+            {
+                if (repos.Delete(tarefas.Id))
+                    return Ok();
+
+                return BadRequest();
+            }
         }
     }
-}
+

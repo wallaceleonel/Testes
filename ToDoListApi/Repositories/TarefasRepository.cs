@@ -1,4 +1,5 @@
-﻿using ToDoListApi.Models;
+﻿using Microsoft.AspNetCore.Mvc;
+using ToDoListApi.Models;
 using ToDoListApi.Models.Entites;
 
 namespace ToDoListApi.Repositories
@@ -7,10 +8,9 @@ namespace ToDoListApi.Repositories
     {
         public bool Create(PostTarefa tarefas);
         public Tarefas Read(int Id);
-        public Tarefas Read(Tarefas tarefas);
+        public  Tarefas ReadAll();
         public bool Update(PutTarefas tarefas);
         public bool Delete(int Id);
-
     }
     public class TarefasRepository : ITarefasRepository
     {
@@ -52,11 +52,11 @@ namespace ToDoListApi.Repositories
                 return new Tarefas();
             }
         }
-        public Tarefas Read(Tarefas tarefas)
+        public Tarefas ReadAll()
         {
             try
             {
-                var tarefas_db = db.Tarefas.Find(tarefas.Titulo, tarefas.Detalhes);
+                var tarefas_db = db.Tarefas.Find();
                 return tarefas_db;
             }catch
             {
