@@ -7,6 +7,7 @@ namespace ToDoListApi.Repositories
     {
         public bool Create(PostTarefa tarefas);
         public Tarefas Read(int Id);
+        public Tarefas Read(Tarefas tarefas);
         public bool Update(PutTarefas tarefas);
         public bool Delete(int Id);
 
@@ -49,6 +50,17 @@ namespace ToDoListApi.Repositories
             catch
             {
                 return new Tarefas();
+            }
+        }
+        public Tarefas Read(Tarefas tarefas)
+        {
+            try
+            {
+                var tarefas_db = db.Tarefas.Find(tarefas.Titulo, tarefas.Detalhes);
+                return tarefas_db;
+            }catch
+            {
+                return null;
             }
         }
         public bool Update(PutTarefas tarefas)

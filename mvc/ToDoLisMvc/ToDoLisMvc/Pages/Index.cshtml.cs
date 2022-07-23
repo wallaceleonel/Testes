@@ -32,7 +32,7 @@ namespace ToDoLisMvc.Pages
                 client.DefaultRequestHeaders.Accept.Add(
                     new MediaTypeWithQualityHeaderValue("application/json"));
 
-                HttpResponseMessage response = await client.GetAsync("api/Tarefas/");
+                HttpResponseMessage response = await client.GetAsync("/api/Tarefas/");
                 if (response.IsSuccessStatusCode)
                 {
                     string result = response.Content.ReadAsStringAsync().Result;
