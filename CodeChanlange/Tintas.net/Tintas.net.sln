@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.3.32804.467
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TintasApi", "TintasApi.csproj", "{E89DE2F3-69AA-47FE-8023-C5AE85AB8F2B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tintas.net", "Tintas.net.csproj", "{8EEC0165-FC0F-47FB-B5A1-885C44C0C773}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{E89DE2F3-69AA-47FE-8023-C5AE85AB8F2B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E89DE2F3-69AA-47FE-8023-C5AE85AB8F2B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E89DE2F3-69AA-47FE-8023-C5AE85AB8F2B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E89DE2F3-69AA-47FE-8023-C5AE85AB8F2B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8EEC0165-FC0F-47FB-B5A1-885C44C0C773}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8EEC0165-FC0F-47FB-B5A1-885C44C0C773}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8EEC0165-FC0F-47FB-B5A1-885C44C0C773}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8EEC0165-FC0F-47FB-B5A1-885C44C0C773}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {293259BB-D693-45BA-B161-44F61AEA72E0}
+		SolutionGuid = {E92C8C39-746D-4DFA-AB37-D85B631772DC}
 	EndGlobalSection
 EndGlobal
