@@ -1,12 +1,12 @@
 ﻿@model Tintas.net.Models.ComodoModel
 
 @{
-    ViewData["Title"] = "Tintas.Netcore";
+    ViewData["Title"] ="Index";
 }
 
-<h1>Index</h1>
+<h1>Tintas.NetCore</h1>
 
-<h4>Calculando consumo de tinta por comodo.</h4>
+<h4>Calculando consumo de tinta por comodo</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
@@ -14,8 +14,13 @@
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
                 <label asp-for="AlturaParedeFundo" class="control-label"></label>
+                
                 <input asp-for="AlturaParedeFundo" class="form-control" />
                 <span asp-validation-for="AlturaParedeFundo" class="text-danger"></span>
+               
+                <input asp-for="LarguraParedeFundo" class="form-control" />
+                <span asp-validation-for="LarguraParedeFundo" class="text-danger"></span>
+
             </div>
             <div class="form-group">
                 <label asp-for="LarguraParedeFundo" class="control-label"></label>
@@ -62,18 +67,15 @@
                 <input asp-for="QtdPorta" class="form-control" />
                 <span asp-validation-for="QtdPorta" class="text-danger"></span>
             </div>
+            
             <div class="form-group">
                 <label asp-for="ConsumoTinta" class="control-label"></label>
                 <input asp-for="ConsumoTinta" class="form-control" />
                 <span asp-validation-for="ConsumoTinta" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
+                <input type="submit" value="Calcular" class="btn btn-primary" />
             </div>
         </form>
     </div>
 </div>
-
-@section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
-}

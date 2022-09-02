@@ -5,7 +5,12 @@ namespace Tintas.net.Controllers
 {
     public class CalculoController : Controller
     {
-        [HttpGet]
+        private readonly ILogger<CalculoController> _logger;
+
+        public CalculoController(ILogger<CalculoController> logger)
+        {
+            _logger = logger;
+        }
         public IActionResult Index()
         {
             return View();
@@ -31,7 +36,9 @@ namespace Tintas.net.Controllers
             // calculo da area do comodo.
             comodoModel.ConsumoTinta = ParedeFundo + ParedeFrente + ParedeDireita + ParedeEsqueda;
             
-            return View(comodoModel.ConsumoTinta);
+            ViewData["result"] = comodoModel.ConsumoTinta;
+            
+            return View();
         }
     }
 }

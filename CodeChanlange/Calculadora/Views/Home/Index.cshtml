@@ -1,0 +1,35 @@
+﻿@model Calculadora.Models.ComodoViewModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<form asp-action="Index" style="color:darkblue">
+    <div class="text-center">
+        <h1 class="display-4">Calculadora</h1>
+        
+        <p><label>Parede Fundo</label></p>
+        <input type="number" asp-for="AlturaParedeFundo" placeholder="Altura (M)" required: true, maxLength: 4, min: 1, max: 50 />
+        <input type="number" asp-for="LarguraParedeFundo" placeholder="Largura (M)" required: true, maxLength: 4, min: 1, max: 50 />
+        
+        <p><label>Parede Frente</label></p>
+        <input type="number" asp-for="AltruaParedeFrente" placeholder="Altura (M)" required: true, maxLength: 4, min: 1, max: 50 />
+        <input type="number" asp-for="LarguraParedeFrente" placeholder="Largura (M)" required: true, maxLength: 4, min: 1, max: 50 />
+
+        <p><label>Parede Esquerda</label></p>
+        <input type="number" asp-for="AlturaParedeEsquerda" placeholder="Altura (M)" required: true, maxLength: 4, min: 1, max: 50 />
+        <input type="number" asp-for="LarguraParedeEsquerda" placeholder="Largura (M)" required: true, maxLength: 4, min: 1, max: 50 />
+
+        <p><label>Parede Direita</label></p>
+        <input type="number" asp-for="AlturaParedeDireita" placeholder="Altura (M)" required: true, maxLength: 4, min: 1, max: 50 />
+        <input type="number" asp-for="LarguraParedeDireita" placeholder="Largura (M)" required: true, maxLength: 4, min: 1, max: 50 />
+
+        <p></p>
+        <button>
+        <input type="submit" class="btn btn-danger" value="   Calcular  " asp-for="Operador" />
+        </button>
+        <p></p>
+        <p><label>Resultado</label></p>
+        <p><input type="text" asp-for="@ViewData["result"]" disabled /></p>
+    </div>
+</form>

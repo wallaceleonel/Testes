@@ -1,0 +1,83 @@
+﻿@model Tintas.net.Models.ComodoModel
+
+@{
+    ViewData["Title"] = "Calculo";
+}
+
+
+
+<h4>Calculo do consumo de tinta</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Calculo">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="AlturaParedeFundo" class="control-label"></label>
+                <input asp-for="AlturaParedeFundo" class="form-control" />
+                <span asp-validation-for="AlturaParedeFundo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="LarguraParedeFundo" class="control-label"></label>
+                <input asp-for="LarguraParedeFundo" class="form-control" />
+                <span asp-validation-for="LarguraParedeFundo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AltruaParedeFrente" class="control-label"></label>
+                <input asp-for="AltruaParedeFrente" class="form-control" />
+                <span asp-validation-for="AltruaParedeFrente" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="LarguraParedeFrente" class="control-label"></label>
+                <input asp-for="LarguraParedeFrente" class="form-control" />
+                <span asp-validation-for="LarguraParedeFrente" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AlturaParedeEsquerda" class="control-label"></label>
+                <input asp-for="AlturaParedeEsquerda" class="form-control" />
+                <span asp-validation-for="AlturaParedeEsquerda" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="LarguraParedeEsquerda" class="control-label"></label>
+                <input asp-for="LarguraParedeEsquerda" class="form-control" />
+                <span asp-validation-for="LarguraParedeEsquerda" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AlturaParedeDireita" class="control-label"></label>
+                <input asp-for="AlturaParedeDireita" class="form-control" />
+                <span asp-validation-for="AlturaParedeDireita" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="LarguraParedeDireita" class="control-label"></label>
+                <input asp-for="LarguraParedeDireita" class="form-control" />
+                <span asp-validation-for="LarguraParedeDireita" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="QtdJanela" class="control-label"></label>
+                <input asp-for="QtdJanela" class="form-control" />
+                <span asp-validation-for="QtdJanela" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="QtdPorta" class="control-label"></label>
+                <input asp-for="QtdPorta" class="form-control" />
+                <span asp-validation-for="QtdPorta" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ConsumoTinta" class="control-label"></label>
+                <input asp-for="ConsumoTinta" class="form-control" />
+                <span asp-validation-for="ConsumoTinta" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

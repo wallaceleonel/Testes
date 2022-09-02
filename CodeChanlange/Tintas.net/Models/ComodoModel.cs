@@ -30,6 +30,6 @@ namespace Tintas.net.Models
         ///
 
         [Display(Name= "Consumo")]
-        public int ConsumoTinta { get; set; }
+        public int? ConsumoTinta { get; set; }
     }
 }
