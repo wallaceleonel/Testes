@@ -34,6 +34,6 @@ namespace Calculadora.Models
         public string ?Operador { get; set; }
 
         [Display(Name = "Seu consumo é de :")]
-        public int? ConsumoTinta { get; set; }
+        public List<float>? ConsumoTinta { get; set; }
     }
 }

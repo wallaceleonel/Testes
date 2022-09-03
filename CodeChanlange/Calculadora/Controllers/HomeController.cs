@@ -75,6 +75,8 @@ namespace Calculadora.Controllers
                         result.Add(Latas.Min());
                     }
                 }
+                var resultadoFinal = $" para pintar  a área informada sugerimos que compre {result} ";
+                result = comodoViewModel.ConsumoTinta;
 
                 ViewData["result"] = comodoViewModel.ConsumoTinta;
             }
