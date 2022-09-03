@@ -1,7 +1,11 @@
 ﻿using Calculadora.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.CodeAnalysis.CSharp.Syntax;
 using System.Diagnostics;
 using System.Runtime.ConstrainedExecution;
+using System.Linq;
+using System.Text.RegularExpressions;
+using System;
 
 namespace Calculadora.Controllers
 {
@@ -39,7 +43,7 @@ namespace Calculadora.Controllers
 
             var TotalAreaOcupada = Janela + Porta;
 
-            if (TotalAreaOcupada > AreaComodo/2)
+            if (TotalAreaOcupada > AreaComodo / 2)
             {
                 Console.WriteLine("o tamanho das portas e janelas não pode ultrapassar 50% da area de parede disponivel");
             }
@@ -47,25 +51,33 @@ namespace Calculadora.Controllers
             {
                 var areaM2 = TotalAreaOcupada - AreaComodo;
 
-                var Litros = areaM2 / 5;
-                var Total = Math.Round((decimal)Litros);
+                var litros = areaM2 / 5;
+                var total = litros;
                 Console.WriteLine("`Sua área total a ser pintada tem: ${TotalM2} M², e será necessário ${total} Litro(s) de tinta`");
 
-                var Latas = (18, 3.6, 2.5, 0.5);
-                var result = (0);
+                List<float> result = new List<float>();
+                float[] Latas = { 18.0F, 3.5F, 2.5F, 0.5F };
 
-                var rest = Total;
-
-                for (value of Latas)
+                if (total > Latas.Min())
                 {
-                    var amount = Math.Floor(rest / value);
+                    foreach (var Tamanho in Latas)
+                    {
+                        var quantidadeLatas = Math.Floor((float)(total / Tamanho));
+                        total = total % Tamanho;
+                        for (int i = 1; i <= quantidadeLatas; i++)
+                        {
+                            result.Add(Tamanho);
+                        }
+                    }
 
-                    if (amount === 0) continue;
+                    if (total > 0)
+                    {
+                        result.Add(Latas.Min());
+                    }
                 }
-            }
-                                                
-            ViewData["result"] = comodoViewModel.ConsumoTinta;
 
+                ViewData["result"] = comodoViewModel.ConsumoTinta;
+            }
             return View();
         }
 
