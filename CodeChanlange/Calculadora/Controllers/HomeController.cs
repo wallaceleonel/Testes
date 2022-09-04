@@ -34,6 +34,7 @@ namespace Calculadora.Controllers
 
             // calculando o valor a retirar com janelas e portas 
             // Janela 
+
             var AreaJanela = 2.00 * 1.20;
             var Janela = comodoViewModel.QtdJanela * AreaJanela;
 

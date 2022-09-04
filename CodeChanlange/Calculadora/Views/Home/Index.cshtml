@@ -23,6 +23,43 @@
         <input type="number" asp-for="AlturaParedeDireita" placeholder="Altura (M)" required: true, maxLength: 4, min: 1, max: 50 />
         <input type="number" asp-for="LarguraParedeDireita" placeholder="Largura (M)" required: true, maxLength: 4, min: 1, max: 50 />
         <p></p>
+
+        <div class="form-group">
+            <label asp-for="QtdJanela" class="control-label"></label>
+            <select asp-for="QtdJanela" class="form-control">
+                <option value="0">
+                    Escolha uma opção
+                </option>
+                <option value="1">1 Janela</option>
+                <option value="2">2 Janelas</option>
+                <option value="3">3 Janelas</option>
+                <option value="4">4 Janelas</option>
+                <option value="5">5 Janelas</option>
+                <option value="6">6 Janelas</option>
+                <option value="7">7 Janelas</option>
+                <option value="8">8 Janelas</option>
+                <option value="9">9 Janelas</option>
+                <option value="10">10 Janelas</option>
+            </select>
+            <span asp-validation-for="QtdJanela" class="text-danger"></span>
+                 
+            <label asp-for="QtdPorta" class="control-label"></label>
+            <select asp-for="QtdPorta" class="form-control">
+                <option value="0">
+                    Escolha uma opção
+                </option>
+                <option value="1">1 Porta</option>
+                <option value="2">2 Portas</option>
+                <option value="3">3 Portas</option>
+                <option value="4">4 Portas</option>
+                <option value="5">5 Portas</option>
+                <option value="6">6 Portas</option>
+                <option value="7">7 Portas</option>
+                <option value="8">8 Portas</option>
+                <option value="9">9 Portas</option>
+                <option value="10">10 Portas</option>
+            </select>
+        </div>
        @* botão para abrir modal *@
         <button type="button" class="btn btn-primary" data-toggle="modal">
             <input type="submit" value="Calcular" asp-for="Operador" />
