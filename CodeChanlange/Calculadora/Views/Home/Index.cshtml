@@ -59,6 +59,10 @@
                 <option value="9">9 Portas</option>
                 <option value="10">10 Portas</option>
             </select>
+            <p></p>
+            <p><input type="text" asp-for="@ViewData["areaTotalM2"]" disabled /></p>
+            <p><label>Resultado</label></p>
+            <p><input type="text" asp-for="@ViewData["result"]" disabled /></p>
         </div>
        @* botão para abrir modal *@
         <button type="button" class="btn btn-primary" data-toggle="modal">
@@ -67,17 +71,16 @@
         @* botão para abrir modal *@
 
         @*Modal*@
-        <div  class="modal fade" tabindex="-1" role="dialog">
+        <div  class="modal" tabindex="-1" role="dialog">
             <div class="modal-dialog" role="document">
                 <div class="modal-header">
                     <h2>Consumo</h2>
                 </div>
-                <div class="modal-body">
-                    <p></p>
-                    <p><label>Resultado</label></p>
-                    <p><input type="text" asp-for="@ViewData["result"]" disabled /></p>
+             
                 </div>
             </div>
         </div>
+    <div class="modal-body">
+      
        @* Modal*@
 </form>

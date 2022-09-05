@@ -46,7 +46,9 @@ namespace Calculadora.Controllers
 
             if (TotalAreaOcupada > AreaComodo / 2)
             {
-                Console.WriteLine("o tamanho das portas e janelas não pode ultrapassar 50% da area de parede disponivel");
+                
+                var resultadoFinal =("o tamanho das portas e janelas não pode ultrapassar 50% da area de parede disponivel");
+                ViewData["result"] = resultadoFinal;
             }
             else
             {
@@ -54,9 +56,11 @@ namespace Calculadora.Controllers
 
                 var litros = areaM2 / 5;
                 var total = litros;
-                Console.WriteLine("`Sua área total a ser pintada tem: ${TotalM2} M², e será necessário ${total} Litro(s) de tinta`");
+                var AreaTotalM2 = ($" Sua área total a ser pintada tem: ${areaM2} M², e será necessário ${total} Litro(s) de tinta ");
+  
+                ViewData["areaTotalM2"] = AreaTotalM2;
 
-                List<float> result = new List<float>();
+                List<float> result = new();
                 float[] Latas = { 18.0F, 3.5F, 2.5F, 0.5F };
 
                 if (total > Latas.Min())
@@ -64,22 +68,20 @@ namespace Calculadora.Controllers
                     foreach (var Tamanho in Latas)
                     {
                         var quantidadeLatas = Math.Floor((float)(total / Tamanho));
-                        total = total % Tamanho;
+                        total %= Tamanho;
                         for (int i = 1; i <= quantidadeLatas; i++)
                         {
                             result.Add(Tamanho);
                         }
                     }
-
                     if (total > 0)
                     {
                         result.Add(Latas.Min());
                     }
                 }
                 var resultadoFinal = $" para pintar  a área informada sugerimos que compre {result} ";
-                result = comodoViewModel.ConsumoTinta;
 
-                ViewData["result"] = comodoViewModel.ConsumoTinta;
+                ViewData["result"] = resultadoFinal;
             }
             return View();
         }
