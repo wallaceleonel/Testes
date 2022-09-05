@@ -7,20 +7,20 @@ namespace Calculadora.Models
     {
         [Required]
         [Display(Name = "Parede Fundo")]
-        public int AlturaParedeFundo { get; set; }
-        public int LarguraParedeFundo { get; set; }
+        public float AlturaParedeFundo { get; set; }
+        public float LarguraParedeFundo { get; set; }
         [Required]
         [Display(Name = "Parede Frente")]
-        public int AltruaParedeFrente { get; set; }
-        public int LarguraParedeFrente { get; set; }
+        public float AltruaParedeFrente { get; set; }
+        public float LarguraParedeFrente { get; set; }
         [Required]
         [Display(Name = "Parede Esquerda")]
-        public int AlturaParedeEsquerda { get; set; }
-        public int LarguraParedeEsquerda { get; set; }
+        public float AlturaParedeEsquerda { get; set; }
+        public float LarguraParedeEsquerda { get; set; }
         [Required]
         [Display(Name = "Parede Direita")]
-        public int AlturaParedeDireita { get; set; }
-        public int LarguraParedeDireita { get; set; }
+        public float AlturaParedeDireita { get; set; }
+        public float LarguraParedeDireita { get; set; }
 
         [Display(Name = "Janela")]
         public int? QtdJanela { get; set; }

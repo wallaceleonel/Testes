@@ -30,6 +30,7 @@ namespace Calculadora.Controllers
             var ParedeFundo = comodoViewModel.LarguraParedeFundo * comodoViewModel.AlturaParedeFundo;
             var ParedeEsqueda = comodoViewModel.LarguraParedeEsquerda * comodoViewModel.AlturaParedeEsquerda;
             var ParedeDireita = comodoViewModel.LarguraParedeDireita * comodoViewModel.AlturaParedeDireita;
+
             var AreaComodo = ((ParedeDireita + ParedeEsqueda + ParedeFrente + ParedeFundo) / 4);
 
             // calculando o valor a retirar com janelas e portas 
@@ -46,42 +47,40 @@ namespace Calculadora.Controllers
 
             if (TotalAreaOcupada > AreaComodo / 2)
             {
-                
-                var resultadoFinal =("o tamanho das portas e janelas não pode ultrapassar 50% da area de parede disponivel");
+
+                var resultadoFinal = ("o tamanho das portas e janelas não pode ultrapassar 50% da area de parede disponivel");
                 ViewData["result"] = resultadoFinal;
             }
             else
             {
                 var areaM2 = TotalAreaOcupada - AreaComodo;
-
                 var litros = areaM2 / 5;
-                var total = litros;
-                var AreaTotalM2 = ($" Sua área total a ser pintada tem: ${areaM2} M², e será necessário ${total} Litro(s) de tinta ");
-  
+
+                var AreaTotalM2 = ($" Sua área total a ser pintada tem: {areaM2} M², e será necessário {litros} Litro(s) de tinta ");
                 ViewData["areaTotalM2"] = AreaTotalM2;
 
                 List<float> result = new();
-                float[] Latas = { 18.0F, 3.5F, 2.5F, 0.5F };
+                float[] latas = { 18.0F, 3.5F, 2.5F, 0.5F };
 
-                if (total > Latas.Min())
+                if (litros > latas.Min())
                 {
-                    foreach (var Tamanho in Latas)
+                    foreach (var Tamanho in latas)
                     {
-                        var quantidadeLatas = Math.Floor((float)(total / Tamanho));
-                        total %= Tamanho;
+                        var quantidadeLatas = Math.Floor((float)(litros / Tamanho));
+                        litros %= Tamanho;
                         for (int i = 1; i <= quantidadeLatas; i++)
                         {
                             result.Add(Tamanho);
                         }
                     }
-                    if (total > 0)
+                    if (litros > 0)
                     {
-                        result.Add(Latas.Min());
+                        result.Add(latas.Min());
                     }
                 }
                 var resultadoFinal = $" para pintar  a área informada sugerimos que compre {result} ";
-
                 ViewData["result"] = resultadoFinal;
+                Console.WriteLine(resultadoFinal);
             }
             return View();
         }
