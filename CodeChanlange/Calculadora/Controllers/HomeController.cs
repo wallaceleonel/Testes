@@ -56,7 +56,7 @@ namespace Calculadora.Controllers
                 var areaM2 = TotalAreaOcupada - AreaComodo;
                 var litros = areaM2 / 5;
 
-                var AreaTotalM2 = ($" Sua área total a ser pintada tem: {areaM2} M², e será necessário {litros} Litro(s) de tinta ");
+                var AreaTotalM2 = ($"Área total a ser pintada tem:{areaM2} M², e será necessário {litros} Litro(s) de tinta");
                 ViewData["areaTotalM2"] = AreaTotalM2;
 
                 List<float> result = new();
@@ -78,7 +78,7 @@ namespace Calculadora.Controllers
                         result.Add(latas.Min());
                     }
                 }
-                var resultadoFinal = $" para pintar  a área informada sugerimos que compre {result} ";
+                var resultadoFinal = $" Para pintar a área informada sugerimos que compre {result}latas. ";
                 ViewData["result"] = resultadoFinal;
                 Console.WriteLine(resultadoFinal);
             }

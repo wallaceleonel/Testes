@@ -1,34 +1,34 @@
 ﻿@model Calculadora.Models.ComodoViewModel
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Tintas.NetCore";
 }
-<form asp-action="Index" style="color:darkblue">
+<form asp-action="Index" class="form">
     <div class="text-center">
-        <h1 class="display-4">Calculadora</h1>
-        
+       <div class="margin-text"> 
+        <h2 class="display-4">Calculando consumo de tinta</h2>
+      
         <p><label>Parede Fundo</label></p>
-        <input type="number" asp-for="AlturaParedeFundo" placeholder="Altura (M)" required: true, maxLength: 4, min: 1, max: 50 />
-        <input type="number" asp-for="LarguraParedeFundo" placeholder="Largura (M)" required: true, maxLength: 4, min: 1, max: 50 />
-        
+        <input type="number" asp-for="AlturaParedeFundo" placeholder="Altura (M)",required: true, maxLength: 4, min: 1, max: 50 />
+        <input type="number" asp-for="LarguraParedeFundo" placeholder="Largura (M)",required: true, maxLength: 4, min: 1, max: 50 />
+       
         <p><label>Parede Frente</label></p>
         <input type="number" asp-for="AltruaParedeFrente" placeholder="Altura (M)" required: true, maxLength: 4, min: 1, max: 50 />
         <input type="number" asp-for="LarguraParedeFrente" placeholder="Largura (M)" required: true, maxLength: 4, min: 1, max: 50 />
-
+     
+        
         <p><label>Parede Esquerda</label></p>
         <input type="number" asp-for="AlturaParedeEsquerda" placeholder="Altura (M)" required: true, maxLength: 4, min: 1, max: 50 />
         <input type="number" asp-for="LarguraParedeEsquerda" placeholder="Largura (M)" required: true, maxLength: 4, min: 1, max: 50 />
-
+      
+         
         <p><label>Parede Direita</label></p>
         <input type="number" asp-for="AlturaParedeDireita" placeholder="Altura (M)" required: true, maxLength: 4, min: 1, max: 50 />
         <input type="number" asp-for="LarguraParedeDireita" placeholder="Largura (M)" required: true, maxLength: 4, min: 1, max: 50 />
-        <p></p>
-
         <div class="form-group">
-            <label asp-for="QtdJanela" class="control-label"></label>
             <select asp-for="QtdJanela" class="form-control">
                 <option value="0">
-                    Escolha uma opção
+                    Quanditade Janela
                 </option>
                 <option value="1">1 Janela</option>
                 <option value="2">2 Janelas</option>
@@ -42,11 +42,9 @@
                 <option value="10">10 Janelas</option>
             </select>
             <span asp-validation-for="QtdJanela" class="text-danger"></span>
-                 
-            <label asp-for="QtdPorta" class="control-label"></label>
             <select asp-for="QtdPorta" class="form-control">
                 <option value="0">
-                    Escolha uma opção
+                    Quanditade Porta
                 </option>
                 <option value="1">1 Porta</option>
                 <option value="2">2 Portas</option>
@@ -59,28 +57,14 @@
                 <option value="9">9 Portas</option>
                 <option value="10">10 Portas</option>
             </select>
-            <p></p>
-            <p><input type="text" asp-for="@ViewData["areaTotalM2"]" disabled /></p>
-            <p><label>Resultado</label></p>
-            <p><input type="text" asp-for="@ViewData["result"]" disabled /></p>
         </div>
-       @* botão para abrir modal *@
-        <button type="button" class="btn btn-primary" data-toggle="modal">
-            <input type="submit" value="Calcular" asp-for="ConsumoTinta" />
-        </button>
-        @* botão para abrir modal *@
+    </div>     
+            <p><input class="response" asp-for=" @ViewData["areaTotalM2"]" size="40" maxlength="700"></p>
+            <p><input class="response" asp-for=" @ViewData["result"]"size="40" maxlength="700"></p>
+             @* botão calcular *@
+            <button type="subimit" value="Calcular" asp-for="ConsumoTinta">
+                Calcular
+            </button>
+            @* botão calcular*@
 
-        @*Modal*@
-        <div  class="modal" tabindex="-1" role="dialog">
-            <div class="modal-dialog" role="document">
-                <div class="modal-header">
-                    <h2>Consumo</h2>
-                </div>
-             
-                </div>
-            </div>
-        </div>
-    <div class="modal-body">
-      
-       @* Modal*@
 </form>

@@ -1,18 +1,105 @@
-html {
-  font-size: 14px;
+body{
+  background:#59ABE3;
+  margin: 10px;
 }
 
-@media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
+h2{
+  margin:10px 0;
+  padding-bottom:10px;
+  width:180px;
+  color:#78788c;
+  border-bottom:3px solid #78788c;
+  margin: auto;
+  font-family:'Montserrat',sans-serif;position:relative;
 }
-
-html {
+label:before{
+  content:attr(type);display:block;
+  margin:28px 0 0;
+  font-size:14px;color:#5a5a5a;
+}
+label{
+  font-family:'Montserrat',sans-serif;
+  position:relative;
+  margin: 1px;
+  font-size:large;
+  font: 60;
+  border: 1px;
+  margin-right:5px;
+}
+div.text-center{
+  margin: auto;
+  margin-top: 45px;
+  align-items: normal;
+  content: 'Hi';
   position: relative;
-  min-height: 100%;
+  bottom: auto;
+  background: #b5b5b5;
+  color: #fff;
+  width: 470px;
+  border-radius: 20px;
+  font-size: 12px;
+  box-shadow: 10px 10px 40px -14px #000;
 }
-
-body {
-  margin-bottom: 60px;
+div.form-group{
+  align-items: normal;
+  content: 'Hi';
+  position: relative;
+  bottom: auto;
+  background: #b5b5b5;
+  color: #fff;
+  width: 450px;
+  border-radius: 20px;
+  font-size: 12px;
+  display: inline-flex;
+}
+div.margin-text{
+  margin: 0px 0px 0px 15px;
+}
+input{
+  font-family:'Montserrat',sans-serif;
+  margin: auto;
+  padding:10px;
+  box-sizing:border-box;
+  background:none;
+  outline:none;
+  resize:none;
+  border:0;
+  font-family:'Montserrat',sans-serif;
+  transition:all .3s;
+  border-bottom:2px solid #bebed2
+}
+input:focus{
+  border-bottom:2px solid #78788c
+}
+input.response{
+  width: 100%;
+  border-bottom: none;
+}
+button {
+  float:right;
+  padding: 6px 13px 1px;
+  margin: 15px 5px 10px;
+  font-family:'Montserrat',sans-serif;
+  border:2px solid #78788c;background:0;
+  color:#5a5a6e;
+  cursor:pointer;
+  transition:all .3s;
+  font-size: 20px;
+}
+button:hover{
+  background:#78788c;
+  color:#fff;
+}
+select{
+  font-size: 15px;
+  padding: 6px 13px 1px;
+  margin: 8px 5px 10px;
+  font-family:'Montserrat',sans-serif;
+  border:2px solid #78788c;background:0;
+  color:#5a5a6e;
+  cursor:pointer;
+  transition:all .3s;
+}
+span{
+  margin:0 5px 0 15px;
 }
