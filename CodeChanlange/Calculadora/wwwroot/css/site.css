@@ -20,10 +20,8 @@ label:before{
 label{
   font-family:'Montserrat',sans-serif;
   position:relative;
-  margin: 1px;
   font-size:large;
   font: 60;
-  border: 1px;
   margin-right:5px;
 }
 div.text-center{
@@ -36,7 +34,7 @@ div.text-center{
   background: #403e3b;
   color: #fff;
   width: 470px;
-  border-radius: 20px;
+  border-radius: 15px;
   font-size: 12px;
   box-shadow: 12px 12px 40px -14px #000;
 }
@@ -67,8 +65,11 @@ input{
   font-family:'Montserrat',sans-serif;
   transition:all .3s;
   border-bottom:2px solid #49494a;
-  color: #fff;
-  
+  color: #fff; 
+}
+p{ 
+  font-family: 'Montserrat',sans-serif;
+  font-size: 14px;
 }
 input:focus{
   border-bottom:2px solid #78788c
@@ -80,8 +81,9 @@ input.response{
 }
 button {
   float:right;
-  padding: 6px 13px 1px;
-  margin: 15px 5px 10px;
+  padding: 5px 19px 3px;
+  margin: 0px 5px 10px;
+  border-radius: 8px;
   font-family:'Montserrat',sans-serif;
   border:2px solid #6b6a62;background:0;
   color:#fff;
