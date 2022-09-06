@@ -1,4 +1,4 @@
-# ChatBot_with_Automation
+# UiChatBot
 
 ## Overview: This project is to demonstrate how the Robotic Process Automation(RPA) and ChatBots can be integrated together.
 
