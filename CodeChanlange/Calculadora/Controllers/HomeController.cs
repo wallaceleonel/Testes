@@ -1,11 +1,6 @@
 ﻿using Calculadora.Models;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.CodeAnalysis.CSharp.Syntax;
 using System.Diagnostics;
-using System.Runtime.ConstrainedExecution;
-using System.Linq;
-using System.Text.RegularExpressions;
-using System;
 
 namespace Calculadora.Controllers
 {
