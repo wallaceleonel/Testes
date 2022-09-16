@@ -1,8 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Tintas.net.Models;
-
 namespace Tintas.net.Controllers
 {
+
     public class CalculoController : Controller
     {
         private readonly ILogger<CalculoController> _logger;
